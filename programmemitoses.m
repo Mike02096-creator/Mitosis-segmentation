@@ -36,7 +36,7 @@ J=rgb2gray(G);
 BW = imbinarize(J)
 %figure
 %imshow(BW);
-%title('Image binarisée par un seuil optimal');
+%title('Image binarisÃ©e par un seuil optimal');
 
 %Ouverture morphologique
 
@@ -44,7 +44,7 @@ se = strel('disk',20)
 background = imopen(BW,se);
 figure;
 imshow(background,[]);
-title('Ouverture morphologique de l''image binarisée');
+title('Ouverture morphologique de l''image binarisÃ©e');
 
 
 %Detection des objects de l'image
@@ -61,7 +61,7 @@ for i=1:length(b)
     plot(contour(:,2),contour(:,1),'g','LineWidth',3);
 end
 
-%Extraction des paramètres des objets
+%Extraction des paramÃ¨tres des objets
 
 s = regionprops('table',background,J, 'MajorAxisLength','MinorAxisLength', 'Eccentricity','Area','MeanIntensity','Centroid')
 f = regionprops('table',background,J,'Centroid')
@@ -111,7 +111,7 @@ U=rgb2gray(B);
 BW2 = imbinarize(U)
 %figure
 %imshow(BW2);
-%title('Image binarisée par un seuil optimal');
+%title('Image binarisÃ©e par un seuil optimal');
 
 %Detection des objects de l'image
 
